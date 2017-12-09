@@ -23,31 +23,31 @@ def level1():
 
     operation = "+" if z == 1 else "-"
     if z == 2 and x < y:
-        print(x,y)
         x, y = y, x
-        print(x, y)
 
     if z == 1:
+        summ = operator.add(x, y)
         while answer != True:
-            a = int(input("Сколько будет {0} {1} {2}\n".format(x, operation, y)))
-            if a == operator.add(x,y):
+            a = int(input("Сколько будет {0} {1} {2}\n".format(x, operation, y)) or '9999')
+            if a == summ:
                 print("правильно! ")
                 sleep(5)
                 answer = True
                 level1()
-            else:
+            elif a != summ or a == 9999:
                 print("подумай еще... ")
                 sleep(2)
                 continue
     elif z == 2:
+        m = operator.sub(x, y)
         while answer != True:
-            a = int(input("Сколько будет {0} {1} {2}\n".format(x, operation, y)))
-            if a == operator.sub(x,y):
+            s = int(input("Сколько будет {0} {1} {2}\n".format(x, operation, y)) or '9999')
+            if s == m:
                 print("правильно! ")
                 sleep(5)
                 answer = True
                 level1()
-            else:
+            elif s != m or s == 9999:
                 print("подумай еще... ")
                 sleep(3)
                 continue
